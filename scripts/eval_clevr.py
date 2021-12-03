@@ -39,7 +39,7 @@ def local_get_args_parser():
 
 
 def main(args):
-    utils.init_distributed_mode(args)
+    dist.init_distributed_mode(args)
 
     # Update dataset specific configs
     if args.dataset_config is not None:

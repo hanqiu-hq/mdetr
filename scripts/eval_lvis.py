@@ -37,7 +37,7 @@ def get_args_parser():
 
 
 def main(args):
-    utils.init_distributed_mode(args)
+    dist.init_distributed_mode(args)
 
     device = torch.device(args.device)
     args.batch_size = 1
