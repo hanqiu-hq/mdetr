@@ -52,7 +52,7 @@ def get_args_parser():
         "--combine_datasets_val", nargs="+", help="List of datasets to combine for eval", default=["flickr"]
     )
 
-    parser.add_argument("--coco_path", type=str, default="")
+    parser.add_argument("--coco_path", type=str, default="./coco/")
     parser.add_argument("--vg_img_path", type=str, default="")
     parser.add_argument("--vg_ann_path", type=str, default="")
     parser.add_argument("--clevr_img_path", type=str, default="")
