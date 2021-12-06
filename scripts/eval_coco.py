@@ -32,7 +32,7 @@ from util.metrics import MetricLogger
 def get_args_parser():
     detection_parser = detection.get_args_parser()
     parser = argparse.ArgumentParser("Evaluate MDETR on COCO detection", parents=[detection_parser], add_help=False)
-    parser.add_argument("--coco_path", type=str, default="")
+    # parser.add_argument("--coco_path", type=str, default="")
     return parser
 
 
