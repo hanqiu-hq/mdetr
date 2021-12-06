@@ -32,7 +32,7 @@ from util.metrics import MetricLogger
 def get_args_parser():
     detection_parser = detection.get_args_parser()
     parser = argparse.ArgumentParser("Evaluate MDETR on COCO detection", parents=[detection_parser], add_help=False)
-    parser.add_argument("--coco_minival_path", type=str, default="")
+    parser.add_argument("--coco_path", type=str, default="")
     return parser
 
 
@@ -69,7 +69,7 @@ def main(args):
     model_args.device = args.device
     model, _, _, _, _ = build_model(model_args)
     model.to(device)
-    with open(Path(args.coco_minival_path) / "instances_val2017.json", "r") as f:
+    with open(Path(args.coco_path) / "annotations" / "instances_val2017.json", "r") as f:
         coco_val = json.load(f)
     id2cat = {c["id"]: c for c in coco_val["categories"]}
     all_cats = sorted(list(id2cat.keys()))
